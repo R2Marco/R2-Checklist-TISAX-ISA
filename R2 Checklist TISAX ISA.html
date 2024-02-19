@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist TISAX/ISA</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #0066cc;
+    }
+
+    .checklist-item {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    textarea {
+      width: 40%;
+      padding: 10px;
+    }
+
+    button {
+      background-color: #0066cc;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Checklist TISAX/ISA</h1>
+
+  <div class="checklist-item">
+    <label>
+      <b>Requerimiento 1: Descripción del requerimiento 1</b>
+    </label>
+      <input type="radio" name="req1" value="1"> 1
+      <input type="radio" name="req1" value="2"> 2
+      <input type="radio" name="req1" value="3"> 3
+      <input type="radio" name="req1" value="4"> 4
+      <input type="radio" name="req1" value="5"> 5 
+<br><br>
+    <textarea id="comment1" placeholder="Comentarios..."></textarea>
+  </div>
+
+
+
+
+
+  <script>
+    function enviarComentarios() {
+      // Aquí puedes recopilar las puntuaciones y comentarios y realizar acciones adicionales si es necesario
+      alert('Comentarios y puntuaciones enviados correctamente');
+    }
+  </script>
+
+
+
+  <script>
+    for (let i = 2; i <= 11; i++) {
+      document.write(`
+        <div class="checklist-item">
+          <label>
+            <b>Requerimiento ${i}: Descripción del requerimiento ${i}</b>
+          </label>
+          <input type="radio" name="req${i}" value="1"> 1
+          <input type="radio" name="req${i}" value="2"> 2
+          <input type="radio" name="req${i}" value="3"> 3
+          <input type="radio" name="req${i}" value="4"> 4
+          <input type="radio" name="req${i}" value="5"> 5 
+          <br><br>
+          <textarea id="comment${i}" placeholder="Comentarios..."></textarea>
+        </div>
+      `);
+    }
+  </script>
+
+  <button onclick="enviarComentarios()">Enviar Comentarios</button>
+
+</body>
+</html>
